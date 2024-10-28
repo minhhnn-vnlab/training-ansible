@@ -1,0 +1,28 @@
+database:
+  vm_ip: "192.168.33.16"
+  vm_name: "vnlab-database"
+  vm_port_forwarding:
+    - guest: 5435
+      host: 5435
+
+  postgres_db: 'yii2advanced'
+  postgres_username: 'yii2advanced'
+  postgres_password: 'secret'
+
+# Config for Server Virtual machine
+server:
+  vm_ip: "192.168.33.15"
+  vm_name: "vnlab-server"
+  vm_port_forwarding:
+    - guest: 8080
+      host: 8080
+  
+  domains:
+    yiiapp: 'y2aa.ser'
+
+  # Allow IP to connect to your server
+  allow_ips:
+    - '192.168.33.1'
+    # Container subnet of your project
+    - '172.18.0.0/16'
+    # - 'all' # Allow all IPs
